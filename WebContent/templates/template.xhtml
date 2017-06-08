@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <h:outputStylesheet library="css" name="style.css"/>
+	<title>Sistema de Vendas</title>
+</h:head>
+<h:body>
+
+	<p:growl id="msgGlobal" life="3000" />
+
+	<p:layout fullPage="true">
+		<p:layoutUnit position="north" 
+			header="Sistema de Gerenciamento de Vendas" resizable="false"
+			closable="false" collapsible="false">
+
+		</p:layoutUnit>
+
+
+		<p:layoutUnit position="west" header="Menu" size="200" minSize="40"
+			maxSize="300" resizable="false"
+			closable="false" collapsible="false">
+			
+			<h:form>
+		<p:panelMenu>
+			<p:submenu label="Arquivos">
+				<p:menuitem value="Pincipal" url="#"  />
+			    <p:menuitem value="Sair" url="#" />
+			</p:submenu>
+
+			<p:submenu label="Cadastros">
+					<p:menuitem value="Produtos" url="#" />
+					<p:menuitem value="Fornecedores" url="#" />
+					<p:menuitem value="Funcionarios" url="#" />
+			</p:submenu>
+
+			<p:submenu label="Vendas">
+			    <p:menuitem value="Itens" url="#" />
+				<p:menuitem value="Vendas" url="#" />
+			</p:submenu>
+
+			<p:submenu label="Ajuda">
+				<p:menuitem value="Manual" url="#" />
+				<p:menuitem value="Sobre" url="#" />
+			
+			</p:submenu>
+		</p:panelMenu>
+	</h:form>
+
+		</p:layoutUnit>
+
+		<p:layoutUnit position="center" resizable="false"
+			closable="false" collapsible="false">
+			<ui:insert name="conteudo" />
+		</p:layoutUnit>
+
+		<p:layoutUnit position="south" 
+			header="©Copyright. Todos os direitos reservados." resizable="false"
+			closable="false" collapsible="false">
+
+		</p:layoutUnit>
+	</p:layout>
+</h:body>
+</html>
