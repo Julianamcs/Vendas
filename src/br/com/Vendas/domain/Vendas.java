@@ -12,12 +12,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "tb_vendas")
+@NamedQueries({
+@NamedQuery(name = "Vendas.listar", query = "SELECT vendas FROM Vendas vendas"),
+@NamedQuery(name = "Vendas.buscarVendasPorCodigo", query = "SELECT vendas FROM Vendas vendas WHERE vendas.codigo = :codigo")
+}) 
 public class Vendas {
 
 

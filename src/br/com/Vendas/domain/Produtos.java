@@ -8,11 +8,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "tb_produtos")
+@NamedQueries({
+@NamedQuery(name = "Produtos.listar", query = "SELECT produtos FROM Produtos produtos"),
+@NamedQuery(name = "Produtos.buscarProdutosPorCodigo", query = "SELECT produtos FROM Produtos produtos WHERE produtos.codigo = :codigo")
+}) 
 public class Produtos {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id

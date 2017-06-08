@@ -10,10 +10,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_itens")
+@NamedQueries({
+@NamedQuery(name = "Itens.listar", query = "SELECT itens FROM Itens itens"),
+@NamedQuery(name = "Itens.buscarItensPorCodigo", query = "SELECT itens FROM Itens itens WHERE itens.codigo = :codigo")
+}) 
 public class Itens {
 
 	@GeneratedValue(strategy = GenerationType.AUTO)
